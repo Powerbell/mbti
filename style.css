@@ -1,8 +1,10 @@
 article {
     display: flex;
     flex-direction: column;
+    color: cornsilk;
     font-family: 'misaeng';
-    src: url('misaeng.woff')
+    src: url('misaeng.woff');
+
     
 }
 
