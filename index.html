@@ -28,6 +28,7 @@
         <img id="img" class="rounded-circle mt-5" src="ant.png" alt="animal">
         <h2 id="animal" class="text-center mt-5">동물이름</h2>
         <h3 id="explain" class="text-center mt-5">설명</h3>
+        <a id = "link" class="text-center mt-5" href = "https://coupa.ng/caHye8" >케이크 더 알아보기</a>
     </article>
     <input type="hidden" id="EI" value="0">
     <input type="hidden" id="SN" value="0">
@@ -52,22 +53,22 @@
             12: {"title": "드디어 강이 보이기 시작했습니다.", "type": "JP", "A": "먹으면 죽진 않겠지? 조심스럽게 <br> 물에 비친 내 모습은?", "B": "물이다! 당장 마셔야겠어. <br> 물에 비친 내 모습은?"}
         }
         var result = {
-            "ISTJ": {"animal": "끈기있는 개미", "explain": "당신은 한번 시작한 일은 끝까지 하는 사람입니다! <br><br> 계획대로 진행하는걸 좋아하는군요. <br><br> 약속을 잘 지키는 사람이네요. <br><br> 하지만 너무 완고한 경향이 있어요. <br><br> 새로운 것들도 시도해보는 게 어떨까요? <br><br> 전생에 나와 같은 동물인 연예인은? <br> 조지 부시, 헤르미온느, 소녀시대 써니, <br> 갓세븐 마크, 아이콘 정찬우", "img": "ant.jpg"},
-            "ISFJ": {"animal": "정리정돈 잘하는 코끼리", "explain": "당신은 온화하며 협조를 잘하는 사람입니다! <br><br> 쉬는 시간에도 혼자 일하는 사람이네요. <br><br> 남의 준비물까지도 준비하는 사람이에요. <br><br> 걱정을 너무 하지는 마세요.", "img": "elphant.png"},
-            "INFJ": {"animal": "통찰력 있는 해마", "explain": "", "img": "horse.png"},
-            "INTJ": {"animal": "비전을 제시하는 문어", "explain": "너무 완고한 고집은 거둬주세요!", "img": "octopus.jpg"},
-            "ISTP": {"animal": "논리적인 꿀벌", "explain": "대수롭지 않은 일은 그냥 넘겨요!", "img": "honeybee.jpg"},
-            "ISFP": {"animal": "겸손한 팬더", "explain": "냉정하고 객관적일 필요가 있어요!", "img": "panda.jpg"},
-            "INFP": {"animal": "몽상가 유니콘", "explain": "너무 상처 받지 마세요!", "img": "unicorn.jpg"},
-            "INTP": {"animal": "비평적인 올빼미", "explain": "이론보다 실무에 집중해보는 건 어떨까요?", "img": "owl.jpg"},
-            "ESTP": {"animal": "에너지 넘치는 비버", "explain": "주어진 상황에 집중해봐요! ", "beaver.img": "happy."},
-            "ESFP": {"animal": "매력적인 수달", "explain": "노는 것도 좋지만 할 일을 다 마치고 놀아봐요!", "img": "otter.jpg"},
-            "ENFP": {"animal": "열정적인 돌고래", "explain": "일관성이 필요해요!", "img": "dolphin.jpg"},
-            "ENTP": {"animal": "도전적인 여우", "explain": "아이디어도 좋지만 결과를 내보는 건 어떨까요?", "img": "fox.jpg"},
-            "ESTJ": {"animal": "실용적인 미어캣", "explain": "한 텀 쉬어 가는 건 어떨까요? <br><br> asd", "img": "meerkat.jpg"},
-            "ESFJ": {"animal": "봉사하는 고래", "explain": "사람 사귀는 것도 좋지만 할 일을 다 끝내봐요!", "img": "whale.jpg"},
-            "ENFJ": {"animal": "협동하는 강아지", "explain": "말을 조금 조심하는 건 어떨까요?", "img": "puppy.jpg"},
-            "ENTJ": {"animal": "강력한 지도자 곰", "explain": "너무 리더만 할 필요 없습니다!", "img": "bear.jpg"}
+            "ISTJ": {"animal": "끈기있는 개미", "explain": "ISTJ <br><br> 당신은 한번 시작한 일은 끝까지 하는 사람입니다! <br><br> 계획대로 진행하는걸 좋아하는군요. <br><br> 약속을 잘 지키는 사람이네요. <br><br> 하지만 너무 완고한 경향이 있어요. <br><br> 새로운 것들도 시도해보는 게 어떨까요? <br><br> 전생에 나와 같은 동물인 연예인은? <br> 조지 부시, 헤르미온느, 소녀시대 써니, <br> 갓세븐 마크, 아이콘 정찬우 <br>", "img": "ant.jpg"},
+            "ISFJ": {"animal": "정리정돈 잘하는 코끼리", "explain": "ISFJ <br><br> 당신은 온화하며 협조를 잘하는 사람입니다! <br><br> 쉬는 시간에도 혼자 일하는 사람이네요. <br><br> 남의 준비물까지도 준비하는 사람이에요. <br><br> 걱정을 너무 하지는 마세요.", "img": "elphant.png"},
+            "INFJ": {"animal": "통찰력 있는 해마", "explain": "INFJ <br><br>", "img": "seahorse.png"},
+            "INTJ": {"animal": "비전을 제시하는 문어", "explain": "INTJ <br><br>너무 완고한 고집은 거둬주세요!", "img": "octopus.jpg"},
+            "ISTP": {"animal": "논리적인 꿀벌", "explain": "ISTP <br><br> 대수롭지 않은 일은 그냥 넘겨요!", "img": "honeybee.jpg"},
+            "ISFP": {"animal": "겸손한 팬더", "explain": "ISFP <br><br> 냉정하고 객관적일 필요가 있어요!", "img": "panda.jpg"},
+            "INFP": {"animal": "몽상가 유니콘", "explain": "INFP <br><br> 너무 상처 받지 마세요!", "img": "unicorn.jpg"},
+            "INTP": {"animal": "비평적인 올빼미", "explain": "INTP <br><br>이론보다 실무에 집중해보는 건 어떨까요?", "img": "owl.jpg"},
+            "ESTP": {"animal": "에너지 넘치는 비버", "explain": "ESTP <br><br> 주어진 상황에 집중해봐요! ", "beaver.img": "happy."},
+            "ESFP": {"animal": "매력적인 수달", "explain": "ESFP <br><br> 노는 것도 좋지만 할 일을 다 마치고 놀아봐요!", "img": "otter.jpg"},
+            "ENFP": {"animal": "열정적인 돌고래", "explain": "ENFP <br><br> 일관성이 필요해요!", "img": "dolphin.jpg"},
+            "ENTP": {"animal": "도전적인 여우", "explain": "ENTP <br><br> 아이디어도 좋지만 결과를 내보는 건 어떨까요?", "img": "fox.jpg"},
+            "ESTJ": {"animal": "실용적인 미어캣", "explain": "ESTJ <br><br> 한 텀 쉬어 가는 건 어떨까요? <br><br> ", "img": "meerkat.jpg"},
+            "ESFJ": {"animal": "봉사하는 고래", "explain": "ESFJ <br><br> 사람 사귀는 것도 좋지만 할 일을 다 끝내봐요!", "img": "whale.jpg"},
+            "ENFJ": {"animal": "협동하는 강아지", "explain": "ENFJ <br><br> 말을 조금 조심하는 건 어떨까요?", "img": "puppy.jpg"},
+            "ENTJ": {"animal": "강력한 지도자 곰", "explain": "ENTJ <br><br> 너무 리더만 할 필요 없습니다!", "img": "bear.jpg"}
         }
         function start() {
             $(".start").hide();
@@ -95,6 +96,8 @@
                 $("#img").attr("src",result[mbti]["img"]);
                 $("#animal").html(result[mbti]["animal"]);
                 $("#explain").html(result[mbti]["explain"]);
+                $("#link").html(result[mbti]["link"]);
+                
             } else {
                 $(".progress-bar").attr("style","width: calc(100/12*"+num+"%)");
                 $("#title").html(q[num]["title"]);
