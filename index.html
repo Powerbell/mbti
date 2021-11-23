@@ -9,22 +9,23 @@
 </head>
 <body class="container">
     <article class="start">
-        <h1 class="main-title mt-5 text-center"> 나의 전생 알아보기 </h1>
+        <h1 class="main-title text-center mt-1"> 나는 전생에 뭐였을까?</h1>
         <div class="line"></div>
-        <h2 class="explain text-center mt-5">당신은 잠에 빠집니다. </h2>
-        <button type="button" class="start-btn btn-outline-warning btn-lg" onclick='start();'>잠에서 깨어나기</button>
+        <h2 class="explain text-center mt-5">당신은 최면에 걸려 잠에 듭니다.</h2>
+        <button type="button" class="btn btn-secondary btn-lg" onclick='start();'>잠에서 깨어나기</button>
+      
     </article>
     <article class="question">
         <div class="progress">
-            <div class="progress-bar progress-bar-striped bg-warning" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+            <div class="progress-bar progress-bar-striped " role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
         </div>
         <h2 id="title" class="text-center mt-5">문제</h2>
         <input id="type" type="hidden" value="EI">
-        <button id="A" type="button" class="btn btn-warning">Warning</button>
-        <button id="B" type="button" class="btn btn-warning">Warning</button>
+        <button id="A" type="button" class="btn btn-secondary"></button>
+        <button id="B" type="button" class="btn btn-secondary"></button>
     </article>
     <article class="result">
-        <img id="img" class="rounded-circle mt-5" src="lion.jpg" alt="animal">
+        <img id="img" class="rounded-circle mt-5" src="ant.png" alt="animal">
         <h2 id="animal" class="text-center mt-5">동물이름</h2>
         <h3 id="explain" class="text-center mt-5">설명</h3>
     </article>
@@ -37,34 +38,34 @@
     <script>
         var num = 1;
         var q = {
-            1: {"title": "잠에서 깨니 초원 한 가운데 있습니다. 가장 먼저 무엇을 하시겠습니까?", "type": "EI", "A": "신기함에 여기저기 주위를 돌아본다.", "B": "현재 상황에 대해 <br> 차분히 생각을 한다."},
-            2: {"title": "정신을 차려보니 <br> '내가 사람인가?' 싶습니다.", "type": "EI", "A": "내가 무엇인지 뭐로 알아 보지? 일단 여기저기 돌아본다.", "B": "이 상황에서 <br> 무슨 행동을 할 지 생각한다."},
-            3: {"title": "주변을 보니 풀을 먹는 타조가 있습니다.", "type": "EI", "A": "내가 무엇인지 알아야겠어. <br> 큰 소리로 말을 건다.", "B": "싸움이 날 수도 있을거야. 조심스럽게 주변으로 간다."},
-            4: {"title": "타조가 저~어기로 갔습니다. 어, 저기 뭐지? 처음보는 신기한 게 있습니다.", "type": "SN", "A": "아니야. 내가 뭐지? 빨리 알아야 해. 타조를 따라간다.", "B": "저게 뭐지? 일단 주워본다."},
-            5: {"title": "이제 시간이 너무 많이 지났습니다. 주변이 어두워집니다.", "type": "SN", "A": "일단은 어디든 계속 걸어본다.", "B": "힘들어, 신기한 것과 일단 내일을 기약한다."},
-            6: {"title": "이제 정말 아무것도 보이지 않습니다. 배에서는 음식을 주라고 합니다. 하지만 주위에는 풀만 보입니다.", "type": "SN", "A": "음, 모르는데 먹지 말고 잠이나 자자.", "B": "일단 먹자! 너무 배고파,,,"},
-            7: {"title": "지쳐서 쓰러지며 잠에 빠집니다. <br> 다음 날이 되어보니 <br> 원숭이 한 마리가 누워 있습니다. <br> 여기가 원숭이 집인가?", "type": "TF", "A": "모른 체 하고 <br> 오늘 갈 길을 생각한다.", "B": "너무 반가운데. 깨워 볼까? <br> 나를 공격하려나?"},
-            8: {"title": "원숭이가 일어났습니다. <br> 자기도 나를 보고 '악' 소리를.", "type": "TF", "A": "일단은 경계한다.", "B": "반가워, 자는 데 불편하진 않았니?"},
-            9: {"title": "원숭이 말을 <br> 내가 알아듣지는 않습니다. <br> 일단은 길을 나서려 하는데 <br> 원숭이가 따라걷습니다.", "type": "TF", "A": "갈 길에 방해가 되니 가라고 한다.", "B": "원숭이가 상처 받을 수 있으니 그냥 따라오게 한다."},
-            10: {"title": "여기와서 물을 하나도 못 먹으니 <br> 목이 건조하다. <br> 물을 먼저 찾아야 겠습니다.", "type": "JP", "A": "태양을 이용해서 방향을 정한다.", "B": "아, 목말라. 일단 걸어간다."},
-            11: {"title": "길을 걸어가니 두 갈래 길이 있습니다.", "type": "JP", "A": "많이 다닌 곳을 본다.", "B": "내 감은 여기야. 오른 길로 간다."},
-            12: {"title": "드디어 강이 보입니다.", "type": "JP", "A": "먹어도 되는 물인가 한번 본다. <br> 물에 비친 내 모습은?", "B": "물이다! 당장 뛰어가서 먹는다. <br> 물에 비친 내 모습은?"}
+            1: {"title": "잠에서 깨니 초원 한 가운데 있습니다. 가장 먼저 무엇을 하시겠습니까?", "type": "EI", "A": "여긴 어디지? <br> 신기해서 여기저기 돌아다닌다.", "B": "현재 상황에 대해 <br> 차분히 생각을 한다."},
+            2: {"title": "근데 내가 사람인가?", "type": "EI", "A": "내 모습을 볼 수 있는 방법을 찾아야겠어! 계속 돌아다닌다.", "B": "내가 뭔지 모르니까 조심해야 돼. <br> 이제 무슨 행동을 할 지 생각한다."},
+            3: {"title": "어, 저기 톰슨 가젤이 <br> 풀을 먹고 있네?", "type": "EI", "A": "큰 소리로 말을 걸어 본다.", "B": "싸움이 날 수도 있을거야. <br>  조심스럽게 주변으로 간다."},
+            4: {"title": "톰슨 가젤이 내가 다가오는 것을 보고 도망갔습니다. 그런데 옆에 정체를 알 수 없는 뭔가가 떨어져 있네요.", "type": "SN", "A": "일단 내가 무엇인지 빨리 알아야 해. 톰슨 가젤을 따라가본다.", "B": "저게 뭐지? 일단 주워본다."},
+            5: {"title": "여기 저기 돌아다니다 시간이 너무 많이 지났습니다. 주변이 어두워졌네요.", "type": "SN", "A": "아직은 앞이 보이니까 <br> 어디든 계속 돌아다녀보자.", "B": "힘들어, 일단 내일을 기약한다."},
+            6: {"title": "이제 앞이 보이지 않을 정도로 캄캄합니다. 배에서는 꼬르륵 소리가 나네요. 하지만 주위에는 풀만 보입니다.", "type": "SN", "A": "먹어도 되는건지 모르는데 <br> 먹지 말고 잠이나 자자.", "B": "일단 먹자! 너무 배고파."},
+            7: {"title": "쓰러지듯 잠에 빠집니다. 다음 날 일어나보니 원숭이 한 마리가 옆에서 자고 있습니다.", "type": "TF", "A": "저 원숭이가 공격하면 어떡하지?", "B": "너무 반가운데, 깨워 볼까?"},
+            8: {"title": "원숭이가 내가 움직이는 소리에 깼나보네요. 자기도 놀랬는지 나를 보고 소리를 지릅니다.", "type": "TF", "A": "일단은 경계한다.", "B": "반가워, 자는 데 불편하진 않았니?"},
+            9: {"title": "원숭이가 무슨 말을 하는데 무슨 말인지는 모르겠네요. 일단은 길을 나섭니다. 그런데 원숭이가 따라오네요.", "type": "TF", "A": "갈 길에 방해가 되니 쫓아낸다.", "B": "원숭이가 상처 받을 수 있으니 <br> 그냥 따라오게 한다."},
+            10: {"title": "갈증이 너무 심합니다. <br> 먼저 물을 찾아야겠어요.", "type": "JP", "A": "태양을 이용해서 방향을 정한다.", "B": "아, 목말라. 일단 걸어간다."},
+            11: {"title": "두 갈래 길을 만났습니다.", "type": "JP", "A": "다른 동물이 어디로 많이 갔을까? 발자국을 찾아본다.", "B": "내 감은 오른쪽! 오른쪽으로 간다."},
+            12: {"title": "드디어 강이 보이기 시작했습니다.", "type": "JP", "A": "먹으면 죽진 않겠지? 조심스럽게 <br> 물에 비친 내 모습은?", "B": "물이다! 당장 마셔야겠어. <br> 물에 비친 내 모습은?"}
         }
         var result = {
-            "ISTJ": {"animal": "끈기있는 개미", "explain": "너무 일만 하지 마세요ㅠㅠ", "img": "ant.png"},
-            "ISFJ": {"animal": "정리정돈 잘하는 코끼리", "explain": "쓸데 없는 걱정은 접어두기!", "img": "elphant.png"},
+            "ISTJ": {"animal": "끈기있는 개미", "explain": "당신은 한번 시작한 일은 끝까지 하는 사람입니다! <br><br> 계획대로 진행하는걸 좋아하는군요. <br><br> 약속을 잘 지키는 사람이네요. <br><br> 하지만 너무 완고한 경향이 있어요. <br><br> 새로운 것들도 시도해보는 게 어떨까요? <br><br> 전생에 나와 같은 동물인 연예인은? <br> 조지 부시, 헤르미온느, 소녀시대 써니, <br> 갓세븐 마크, 아이콘 정찬우", "img": "ant.jpg"},
+            "ISFJ": {"animal": "정리정돈 잘하는 코끼리", "explain": "당신은 온화하며 협조를 잘하는 사람입니다! <br><br> 쉬는 시간에도 혼자 일하는 사람이네요. <br><br> 남의 준비물까지도 준비하는 사람이에요. <br><br> 걱정을 너무 하지는 마세요.", "img": "elphant.png"},
             "INFJ": {"animal": "통찰력 있는 해마", "explain": "", "img": "horse.png"},
-            "INTJ": {"animal": "비전을 제시하는 문어", "explain": "너무 완고한 고집은 거둬주세요!", "img": "octopus.png"},
-            "ISTP": {"animal": "논리적인 꿀벌", "explain": "대수롭지 않은 일은 그냥 넘겨요!", "img": "honey.png"},
-            "ISFP": {"animal": "겸손한 팬더", "explain": "냉정하고 객관적일 필요가 있어요!", "img": "panda.png"},
-            "INFP": {"animal": "몽상가 일각고래", "explain": "너무 상처 받지 마세요!", "img": "narwhal.png"},
-            "INTP": {"animal": "비평적인 올빼미", "explain": "이론보다 실무에 집중해보는 건 어떨까요?", "img": "owl.png"},
-            "ESTP": {"animal": "에너지 넘치는 비버", "explain": "주어진 상황에 집중해봐요!", "img": "beaver.png"},
-            "ESFP": {"animal": "매력적인 수달", "explain": "노는 것도 좋지만 할 일을 다 마치고 놀아봐요!", "img": "otter.png"},
-            "ENFP": {"animal": "열정적인 돌고래", "explain": "일관성이 필요해요!", "img": "dolphin.png"},
-            "ENTP": {"animal": "도전적인 여우", "explain": "아이디어도 좋지만 결과를 내보는 건 어떨까요?", "img": "fox.png"},
-            "ESTJ": {"animal": "실용적인 미어캣", "explain": "한 텀 쉬어 가는 건 어떨까요?", "img": "meerkat.jpg"},
-            "ESFJ": {"animal": "봉사하는 고래", "explain": "사람 사귀는 것도 좋지만 할 일을 다 끝내봐요!", "img": "whale.png"},
+            "INTJ": {"animal": "비전을 제시하는 문어", "explain": "너무 완고한 고집은 거둬주세요!", "img": "octopus.jpg"},
+            "ISTP": {"animal": "논리적인 꿀벌", "explain": "대수롭지 않은 일은 그냥 넘겨요!", "img": "honeybee.jpg"},
+            "ISFP": {"animal": "겸손한 팬더", "explain": "냉정하고 객관적일 필요가 있어요!", "img": "panda.jpg"},
+            "INFP": {"animal": "몽상가 유니콘", "explain": "너무 상처 받지 마세요!", "img": "unicorn.jpg"},
+            "INTP": {"animal": "비평적인 올빼미", "explain": "이론보다 실무에 집중해보는 건 어떨까요?", "img": "owl.jpg"},
+            "ESTP": {"animal": "에너지 넘치는 비버", "explain": "주어진 상황에 집중해봐요! ", "beaver.img": "happy."},
+            "ESFP": {"animal": "매력적인 수달", "explain": "노는 것도 좋지만 할 일을 다 마치고 놀아봐요!", "img": "otter.jpg"},
+            "ENFP": {"animal": "열정적인 돌고래", "explain": "일관성이 필요해요!", "img": "dolphin.jpg"},
+            "ENTP": {"animal": "도전적인 여우", "explain": "아이디어도 좋지만 결과를 내보는 건 어떨까요?", "img": "fox.jpg"},
+            "ESTJ": {"animal": "실용적인 미어캣", "explain": "한 텀 쉬어 가는 건 어떨까요? <br><br> asd", "img": "meerkat.jpg"},
+            "ESFJ": {"animal": "봉사하는 고래", "explain": "사람 사귀는 것도 좋지만 할 일을 다 끝내봐요!", "img": "whale.jpg"},
             "ENFJ": {"animal": "협동하는 강아지", "explain": "말을 조금 조심하는 건 어떨까요?", "img": "puppy.jpg"},
             "ENTJ": {"animal": "강력한 지도자 곰", "explain": "너무 리더만 할 필요 없습니다!", "img": "bear.jpg"}
         }
@@ -104,5 +105,6 @@
             }
         }
     </script>
-</body>
+    
+  </body>
 </html>
